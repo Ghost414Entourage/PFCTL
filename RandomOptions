@@ -25,8 +25,6 @@ pass out proto tcp to any port $tcp_services
 # Allow specific UDP services
 pass out proto udp to any port $udp_services
 
-# Pass DHCP (UDP/TCP) traffic from specific IPs and ports, keeping state
-pass inet proto { udp, tcp } from { 192.168.1.254, 192.168.1.252 } port 68 to any keep state
 
 # Block specified UDP and TCP ports both incoming and outgoing
 block in proto { tcp, udp } from any to any port { 135, 137, 138, 139, 23, 445, 161, 162, 69, 5900, 5901, 59130 }
@@ -58,8 +56,6 @@ pass out proto tcp to any port 443
 # Allow specific UDP services (assuming same as TCP services for this example)
 pass out proto udp to any port 443
 
-# Pass DHCP (UDP/TCP) traffic from specific IPs and ports, keeping state
-pass inet proto { udp, tcp } from { 192.168.1.254, 192.168.1.252 } port 68 to any keep state
 
 # Block specified TCP ports both incoming and outgoing
 block in proto tcp from any to any port { 20, 21, 23, 135, 137, 138, 139, 445, 161, 162, 5900, 5901, 59130, 5353, 5354 }
@@ -112,14 +108,10 @@ set skip on lo0
 scrub in all
 scrub out all
 
-table <blocklist> persist file "/etc/blocklist.txt"
-table <private_nets> { 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16 }
 
 # Antispoofing
 antispoof quick for $wifi
 
-# Allow DHCP (which uses UDP and TCP port 68) for specific IPv4 addresses
-pass in inet proto { udp, tcp } from any to { 192.168.1.254, 192.168.1.157 } port 68 keep state
 
 # Block specific TCP ports for incoming and outgoing traffic
 block in on $wifi proto tcp from any to any port { 135, 137, 138, 139, 23, 445, 161, 162, 69, 5900, 5901 }
@@ -141,8 +133,6 @@ block in log from any to 255.255.255.255
 # Block and log traffic to loopback address 127.0.0.1/32
 block in log from any to 127.0.0.1/32
 
-# Allow outbound DNS and DNS over TLS traffic (Port 53 and 853) to a specific IP
-pass out on $wifi proto { tcp, udp } from any to 192.168.1.254 port { 53, 853 } keep state
 
 # Pass only outbound traffic on port 443 and keep state
 pass out on $wifi proto { tcp, udp } from any to any port 443 keep state
@@ -188,14 +178,7 @@ set skip on lo0
 scrub in all
 scrub out all
 
-table <blocklist> persist file "/etc/blocklist.txt"
-table <private_nets> { 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16 }
 
-# Antispoofing
-antispoof quick for all
-
-# Allow DHCP (which uses UDP and TCP port 68) for specific IPv4 addresses
-pass in inet proto { udp, tcp } from any to { 192.168.1.254, 192.168.1.157 } port 68 keep state
 
 # Block specific TCP ports for incoming and outgoing traffic
 block in proto tcp from any to any port { 135, 137, 138, 139, 23, 445, 161, 162, 69, 5900, 5901 }
@@ -217,8 +200,6 @@ block in log from any to 255.255.255.255
 # Block and log traffic to loopback address 127.0.0.1/32
 block in log from any to 127.0.0.1/32
 
-# Allow outbound DNS and DNS over TLS traffic (Port 53 and 853) to a specific IP
-pass out proto { tcp, udp } from any to 192.168.1.254 port { 53, 853 } keep state
 
 # Pass only outbound traffic on port 443 and keep state
 pass out proto { tcp, udp } from any to any port 443 keep state
@@ -269,8 +250,6 @@ pass out proto tcp to any port $tcp_services
 # Allow specific UDP services
 pass out proto udp to any port $udp_services
 
-# Pass DHCP (UDP/TCP) traffic from specific IPs and ports, keeping state
-pass inet proto { udp, tcp } from { 192.168.1.254, 192.168.1.252 } port 68 to any keep state
 
 # Block specified UDP and TCP ports both incoming and outgoing
 block in proto { tcp, udp } from any to any port { 20, 21, 23, 135, 137, 138, 139, 23, 445, 161, 162, 69, 5900, 5901, 59130 }
@@ -330,8 +309,6 @@ pass out proto tcp to any port $tcp_services port 443
 # Allow specific UDP services (assuming same as TCP services for this example)
 pass out proto udp to any port $udp_services port 443
 
-# Pass DHCP (UDP/TCP) traffic from specific IPs and ports, keeping state
-pass inet proto { udp, tcp } from { 192.168.1.254, 192.168.1.252 } port 68 to any keep state
 
 # Block specified TCP ports both incoming and outgoing
 block in proto tcp from any to any port { 20, 21, 135, 137, 138, 139, 445, 161, 162, 69, 5900, 5901, 59130, 61957, 56168, 56727, 5353, 5354, 58331 }
@@ -353,16 +330,6 @@ block on udp from 17.0.0.0/8 to any
 block inet proto { tcp, udp } from 169.254.0.0/16 to any
 block inet proto { tcp, udp } from any to 169.254.0.0/16
 
-# Block IPv6 Link-local addresses (fe80::/10)
-block inet6 proto { tcp, udp } from fe80::/10 to any
-block inet6 proto { tcp, udp } from any to fe80::/10
-
-# Block IPv6 Site-local addresses (fec0::/10)
-block out inet6 from fec0::/10 to any
-block in inet6 from any to fec0::/10
-
-
-
 
 
 
@@ -379,9 +346,6 @@ pass out proto tcp to any port 443
 
 # Allow specific UDP services (assuming same as TCP services for this example)
 pass out proto udp to any port 443
-
-# Pass DHCP (UDP/TCP) traffic from specific IPs and ports, keeping state
-pass inet proto { udp, tcp } from { 192.168.1.254, 192.168.1.252 } port 68 to any keep state
 
 # Block specified TCP ports both incoming and outgoing
 block in proto tcp from any to any port { 20, 21, 23, 135, 137, 138, 139, 445, 161, 162, 5900, 5901, 59130 }
@@ -421,9 +385,6 @@ pass out proto tcp to any port 443
 
 # Allow specific UDP services (assuming same as TCP services for this example)
 pass out proto udp to any port 443
-
-# Pass DHCP (UDP/TCP) traffic from specific IPs and ports, keeping state
-pass inet proto { udp, tcp } from { 192.168.1.254, 192.168.1.252 } port 68 to any keep state
 
 # Block specified TCP ports both incoming and outgoing
 block in proto tcp from any to any port { 20, 21, 23, 135, 137, 138, 139, 445, 161, 162, 5900, 5901, 59130, 5353, 5354 }
