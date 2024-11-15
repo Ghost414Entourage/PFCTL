@@ -14,18 +14,18 @@
 
 MLA:
 
-R_A_Chalmers. “Protect Your Mac with PF, the All Powerful Firewall – Affinity Inspiration.” Robert-Chalmers.uk, 22 Sept. 2017, robert-chalmers.uk/2018/10/protect-your-mac-with-pf-the-all-powerful-firewall/#google_vignette.
+chalmers, robert. Protect Your Mac with PF. 14 Nov. 2024, https://robert-chalmers.uk/2018/10/protect-your-mac-with-pf-the-all-powerful-firewall/#google_vignette.
 
 Usnistgov. “Macos_security/Includes/ENABLEPF-Mscp.Sh at Main · Usnistgov/Macos_security.” GitHub, github.com/usnistgov/macos_security/blob/main/includes/enablePF-mscp.sh. Accessed 14 Nov. 2024. 
 
 Chicago:
 
-R_A_Chalmers. 2017. “Protect Your Mac with PF, the All Powerful Firewall – Affinity Inspiration.” Robert-Chalmers.uk. September 22, 2017. https://robert-chalmers.uk/2018/10/protect-your-mac-with-pf-the-all-powerful-firewall/#google_vignette.
+chalmers, robert. “Protect Your Mac with PF, the All Powerful Firewall,” 2024. November 14. https://robert-chalmers.uk/2018/10/protect-your-mac-with-pf-the-all-powerful-firewall/#google_vignette.
 
-“Usnistgov/Macos_security.” 2022. GitHub. August 16, 2022. https://github.com/usnistgov/macos_security.
+chalmers, robert. “Protect Your Mac with PF,” 2024. November 14. https://robert-chalmers.uk/2018/10/protect-your-mac-with-pf-the-all-powerful-firewall/#google_vignette.
 
 APA: 
 
-R_A_Chalmers. (2017, September 22). Protect Your Mac with PF, the All Powerful Firewall – Affinity Inspiration. Robert-Chalmers.uk. https://robert-chalmers.uk/2018/10/protect-your-mac-with-pf-the-all-powerful-firewall/#google_vignette
+chalmers, robert. (2024, November 14). Protect Your Mac with PF. https://robert-chalmers.uk/2018/10/protect-your-mac-with-pf-the-all-powerful-firewall/#google_vignette
 
-usnistgov/macos_security. (2022, August 16). GitHub. https://github.com/usnistgov/macos_security
+GOV., N. (2024, November 14). macos_security. usnistgov/macos_security. (2022, August 16). GitHub. https://github.com/usnistgov/macos_security
