@@ -12,3 +12,18 @@
 
 
 U.S. National Institute of Standards and Technology. “enablePF-mscp.sh.” macos_security, GitHub, 2023, https://github.com/usnistgov/macos_security/blob/main/includes/enablePF-mscp.sh. Accessed 19 Oct. 2024.
+
+
+
+MLA:
+Author@R_A_Chalmers. “Protect Your Mac with PF, the All Powerful Firewall.” Affinity Inspiration, 22 Sept. 2017, robert-chalmers.uk/2018/10/protect-your-mac-with-pf-the-all-powerful-firewall/#google_vignette. 
+
+
+
+Chicago:
+Author@R_A_Chalmers. “Protect Your Mac with PF, the All Powerful Firewall.” Affinity Inspiration, September 22, 2017. https://robert-chalmers.uk/2018/10/protect-your-mac-with-pf-the-all-powerful-firewall/#google_vignette. 
+
+
+
+APA: 
+Author@R_A_Chalmers. (2017, September 22). Protect your mac with PF, the all powerful firewall. Affinity Inspiration. https://robert-chalmers.uk/2018/10/protect-your-mac-with-pf-the-all-powerful-firewall/#google_vignette 
